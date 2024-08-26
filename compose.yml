@@ -1,0 +1,17 @@
+services:
+  proxy:
+    image: nginx:1.23.3-alpine
+    container_name: imc-proxy
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - ./db-imc.conf:/etc/nginx/conf.d/db-imc.conf
+      - ./api-imc.conf:/etc/nginx/conf.d/api-imc.conf
+      #- ./web-imc.conf:/etc/nginx/conf.d/web-imc.conf
+    networks:
+      - applications-network
+networks:
+  applications-network:
+    external: true
+    name: applications-network
