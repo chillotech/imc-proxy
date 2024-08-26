@@ -11,6 +11,7 @@ services:
       #- ./web-imc.conf:/etc/nginx/conf.d/web-imc.conf
     networks:
       - applications-network
+
 networks:
   applications-network:
     external: true
