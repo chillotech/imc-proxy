@@ -8,7 +8,7 @@ services:
     volumes:
       - ./db-imc.conf:/etc/nginx/conf.d/db-imc.conf
       - ./api-imc.conf:/etc/nginx/conf.d/api-imc.conf
-      #- ./web-imc.conf:/etc/nginx/conf.d/web-imc.conf
+      - ./web-imc.conf:/etc/nginx/conf.d/web-imc.conf
     networks:
       - applications-network
 
